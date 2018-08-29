@@ -4,9 +4,10 @@ public class Marathon implements PaceCalculator {
 
     final int distance = 42195;
 
+    private int expectedHours;
     private int expectedMinutes;
     private int expectedSeconds;
-    private int expectedHours;
+
 
     public Marathon(int expectedHours, int expectedMinutes, int expectedSeconds) {
         this.expectedHours = expectedHours;

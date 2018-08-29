@@ -8,10 +8,10 @@ public class Main {
     public static int menu(){
         System.out.println("Wybierz dystans, dla którego chcesz obliczyć szacowane tempo. Wybierz liczbę i potwierdź " +
                 "Enterem:");
-        System.out.println("     1. 5 kilometrów");
-        System.out.println("     2. 10 kilometrów");
-        System.out.println("     3. Półmaraton");
-        System.out.println("     4. Maraton");
+        System.out.println("  1. 5 kilometrów");
+        System.out.println("  2. 10 kilometrów");
+        System.out.println("  3. Półmaraton");
+        System.out.println("  4. Maraton");
 
         Scanner in = new Scanner(System.in);
         int choice = in.nextInt();
@@ -80,8 +80,7 @@ public class Main {
                     break;
             }
             System.out.println("Dziękujemy za skorzystanie z kalkulatora tempa biegu");
-            TimeUnit.SECONDS.sleep(3);
-            menu();
+            return;
         }
     }
 }
