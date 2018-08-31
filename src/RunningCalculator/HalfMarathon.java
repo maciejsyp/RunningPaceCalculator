@@ -4,14 +4,16 @@ public class HalfMarathon extends RunningDistances {
 
     private String type = "HalfMarathon";
 
+    public final Distances distance = Distances.HALFMARATHON;
+
     public HalfMarathon() {}
 
     public HalfMarathon(String type) {
         this.type = type;
     }
 
-    public HalfMarathon(int hours, int minutes, int seconds) {
-        super(hours, minutes, seconds);
+    public HalfMarathon(int hours, int minutes, int seconds, Distances distance) {
+        super(hours, minutes, seconds, distance);
     }
 }
 

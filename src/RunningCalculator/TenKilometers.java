@@ -4,14 +4,16 @@ public class TenKilometers extends RunningDistances {
 
     private String type = "TenKilometers";
 
+    public final Distances distance = Distances.KILOMETERS_10;
+
     public TenKilometers() {}
 
     public TenKilometers(String type) {
         this.type = type;
     }
 
-    public TenKilometers(int hours, int minutes, int seconds) {
-        super(hours, minutes, seconds);
+    public TenKilometers(int hours, int minutes, int seconds, Distances distance) {
+        super(hours, minutes, seconds, distance);
     }
 }
 

@@ -6,18 +6,19 @@ public enum Distances {
     HALFMARATHON(21.097),
     MARATHON(42.195);
 
+    private final int HOURS_TO_SECONDS = 3600;
+    private final int MINUTES_TO_SECONDS = 60;
+
     private double distance;
 
-    Distances(double distance){
-
+    Distances(double distance) {
         this.distance = distance;
     }
 
-    public double getDistance(){
-        return distance;
-    }
-
-    public double countPace(long timeInSeconds){
-        return (double) timeInSeconds/this.distance;
+    public String countPace(long timeInSeconds){
+        double countedPaceInSeconds = (double) timeInSeconds/this.distance;
+        String countedPace =
+                ((int)countedPaceInSeconds / MINUTES_TO_SECONDS) + ":" + (int)(countedPaceInSeconds % MINUTES_TO_SECONDS);
+        return countedPace;
     }
 }

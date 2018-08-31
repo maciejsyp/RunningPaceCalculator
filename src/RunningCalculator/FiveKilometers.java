@@ -2,6 +2,7 @@ package RunningCalculator;
 
 public class FiveKilometers extends RunningDistances {
     private String type = "FiveKilometers";
+    public final Distances distance = Distances.KILOMETERS_5;
 
     public FiveKilometers(){}
 
@@ -9,8 +10,8 @@ public class FiveKilometers extends RunningDistances {
         this.type = type;
     }
 
-    public FiveKilometers(int hours, int minutes, int seconds) {
-        super(hours, minutes, seconds);
+    public FiveKilometers(int hours, int minutes, int seconds, Distances distance) {
+        super(hours, minutes, seconds, distance);
     }
 }
 
