@@ -1,34 +1,33 @@
 package RunningCalculator;
 
-public class HalfMarathon implements PaceCalculator {
+public class HalfMarathon extends RunningDistances {
 
-    final int distance = 21097;
+    private String type = "HalfMarathon";
 
-    private int expectedHours;
-    private int expectedMinutes;
-    private int expectedSeconds;
+    public HalfMarathon() {}
 
-
-    public HalfMarathon(int expectedHours, int expectedMinutes, int expectedSeconds) {
-        this.expectedHours = expectedHours;
-        this.expectedMinutes = expectedMinutes;
-        this.expectedSeconds = expectedSeconds;
+    public HalfMarathon(String type) {
+        this.type = type;
     }
 
-    @Override
-
-    public String countPace(){
-
-        int countedHoursToMinutes = expectedHours * 60;
-        int countedMinutesToSeconds =
-                ((countedHoursToMinutes * 60) / (distance / 1000)) + ((expectedMinutes * 60)) / (distance / 1000);
-        int countedMinutes = countedMinutesToSeconds / 60;
-        int countedSeconds = (countedMinutesToSeconds % 60) + ((expectedSeconds) / (distance / 1000));
-        if(countedSeconds > 59){
-            countedSeconds = countedSeconds - 59;
-            countedMinutes++;
-        }
-        return (countedMinutes + ":" + countedSeconds);
+    public HalfMarathon(int hours, int minutes, int seconds) {
+        super(hours, minutes, seconds);
     }
-
 }
+
+//
+//    public String countPace(){
+//
+//        int countedHoursToMinutes = expectedHours * 60;
+//        int countedMinutesToSeconds =
+//                ((countedHoursToMinutes * 60) / (distance / 1000)) + ((expectedMinutes * 60)) / (distance / 1000);
+//        int countedMinutes = countedMinutesToSeconds / 60;
+//        int countedSeconds = (countedMinutesToSeconds % 60) + ((expectedSeconds) / (distance / 1000));
+//        if(countedSeconds > 59){
+//            countedSeconds = countedSeconds - 59;
+//            countedMinutes++;
+//        }
+//        return (countedMinutes + ":" + countedSeconds);
+//    }
+//
+//}

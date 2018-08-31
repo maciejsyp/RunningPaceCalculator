@@ -1,34 +1,35 @@
 package RunningCalculator;
 
-public class Marathon implements PaceCalculator {
+public class Marathon extends RunningDistances {
 
-    final int distance = 42195;
+    private String type = "Marathon";
 
-    private int expectedHours;
-    private int expectedMinutes;
-    private int expectedSeconds;
+    public Marathon() {}
 
-
-    public Marathon(int expectedHours, int expectedMinutes, int expectedSeconds) {
-        this.expectedHours = expectedHours;
-        this.expectedMinutes = expectedMinutes;
-        this.expectedSeconds = expectedSeconds;
+    public Marathon(String type) {
+        this.type = type;
     }
 
-    @Override
-
-    public String countPace(){
-
-        int countedHoursToMinutes = expectedHours * 60;
-        int countedMinutesToSeconds =
-                ((countedHoursToMinutes * 60) / (distance / 1000)) + ((expectedMinutes * 60)) / (distance / 1000);
-        int countedMinutes = countedMinutesToSeconds / 60;
-        int countedSeconds = (countedMinutesToSeconds % 60) + ((expectedSeconds) / (distance / 1000));
-        if(countedSeconds > 59){
-            countedSeconds = countedSeconds - 59;
-            countedMinutes++;
-        }
-        return (countedMinutes + ":" + countedSeconds);
+    public Marathon(int hours, int minutes, int seconds) {
+        super(hours, minutes, seconds);
     }
-
 }
+
+
+//    @Override
+//
+//    public String countPace(){
+//
+//        int countedHoursToMinutes = expectedHours * 60;
+//        int countedMinutesToSeconds =
+//                ((countedHoursToMinutes * 60) / (distance / 1000)) + ((expectedMinutes * 60)) / (distance / 1000);
+//        int countedMinutes = countedMinutesToSeconds / 60;
+//        int countedSeconds = (countedMinutesToSeconds % 60) + ((expectedSeconds) / (distance / 1000));
+//        if(countedSeconds > 59){
+//            countedSeconds = countedSeconds - 59;
+//            countedMinutes++;
+//        }
+//        return (countedMinutes + ":" + countedSeconds);
+//    }
+//
+//}
