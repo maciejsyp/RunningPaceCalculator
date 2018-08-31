@@ -66,9 +66,10 @@ public class Main {
                 System.out.println("Wprowadzono błędne dane. Podaj liczbę z zakresu 1 - 4");
                 backToMenu = true;
             }
-        }
             System.out.println("Dziękujemy za skorzystanie z kalkulatora tempa biegu");
-            return;
+            backToMenu = true;
+
+        }
 
     }
 }
