@@ -12,6 +12,7 @@ public class Main {
         boolean backToMenu = true;
 
         Scanner in = new Scanner(System.in);
+        Messages message = new Messages();
 
         while (backToMenu) {
 
@@ -25,49 +26,51 @@ public class Main {
 
                 if (choice == 1) {
                     RunningDistances distance = DistancesFactory.createDistance(Distances.KILOMETERS_5);
+                    message.instructionMessage();
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.KILOMETERS_5.countPace(timeInSeconds);
-                    System.out.println(countedPace);
+                    message.resultMessage(countedPace);
 
                 } else if (choice == 2) {
                     RunningDistances distance = DistancesFactory.createDistance(Distances.KILOMETERS_10);
+                    message.instructionMessage();
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.KILOMETERS_10.countPace(timeInSeconds);
-                    System.out.println(countedPace);
+                    message.resultMessage(countedPace);
                 } else if (choice == 3) {
                     RunningDistances distance = DistancesFactory.createDistance(Distances.HALFMARATHON);
+                    message.instructionMessage();
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.HALFMARATHON.countPace(timeInSeconds);
-                    System.out.println(countedPace);
+                    message.resultMessage(countedPace);
                 } else if (choice == 4) {
                     RunningDistances distance = DistancesFactory.createDistance(Distances.MARATHON);
+                    message.instructionMessage();
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.MARATHON.countPace(timeInSeconds);
-                    System.out.println(countedPace);
+                    message.resultMessage(countedPace);
                 } else {
-                    System.out.println("Wprowadzono błędne dane. Podaj liczbę z zakresu 1 - 4");
+                    message.errorMessage();
                     backToMenu = true;
                 }
             } catch (InputMismatchException i) {
-                System.out.println("Wprowadzono błędne dane. Podaj liczbę z zakresu 1 - 4");
+                message.errorMessage();
                 backToMenu = true;
             }
-            System.out.println("Dziękujemy za skorzystanie z kalkulatora tempa biegu");
+            message.endMessage();
             backToMenu = true;
-
         }
-
     }
 }
