@@ -2,7 +2,6 @@ package RunningCalculator;
 
 public abstract class RunningDistances extends PaceCalculator {
 
-    private String type;
     protected int hours;
     protected int minutes;
     protected int seconds;
@@ -11,9 +10,6 @@ public abstract class RunningDistances extends PaceCalculator {
     public RunningDistances() {
     }
 
-    public RunningDistances(String type) {
-        this.type = type;
-    }
 
     public RunningDistances(int hours, int minutes, int seconds, Distances distance) {
         this.hours = hours;

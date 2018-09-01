@@ -2,15 +2,15 @@ package RunningCalculator;
 
 public class DistancesFactory {
 
-    public RunningDistances createDistance(String type) {
+    public static RunningDistances createDistance(Distances givenDistance) {
         RunningDistances distance = null;
-        if (type.equals("FiveKilometers")) {
+        if (givenDistance.equals(Distances.KILOMETERS_5)) {
             distance = new FiveKilometers();
-        } else if (type.equals("TenKilometers")) {
+        } else if (givenDistance.equals(Distances.KILOMETERS_10)) {
             distance = new TenKilometers();
-        } else if (type.equals("HalfMarathon")) {
+        } else if (givenDistance.equals(Distances.HALFMARATHON)) {
             distance = new HalfMarathon();
-        } else if (type.equals("Marathon")) {
+        } else if (givenDistance.equals(Distances.MARATHON)) {
             distance = new Marathon();
         }
         return distance;

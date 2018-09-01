@@ -6,7 +6,6 @@ public enum Distances {
     HALFMARATHON(21.097),
     MARATHON(42.195);
 
-    private final int HOURS_TO_SECONDS = 3600;
     private final int MINUTES_TO_SECONDS = 60;
 
     private double distance;

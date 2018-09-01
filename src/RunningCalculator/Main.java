@@ -24,37 +24,35 @@ public class Main {
                 int seconds;
 
                 if (choice == 1) {
-//                 DistancesFactory distance1 = new DistancesFactory();
-//                 distance1.createDistance("FiveKilometers");
+                    RunningDistances distance = DistancesFactory.createDistance(Distances.KILOMETERS_5);
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
-                    RunningDistances distance = new FiveKilometers(hours, minutes, seconds, Distances.KILOMETERS_5);
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.KILOMETERS_5.countPace(timeInSeconds);
                     System.out.println(countedPace);
 
                 } else if (choice == 2) {
+                    RunningDistances distance = DistancesFactory.createDistance(Distances.KILOMETERS_10);
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
-                    RunningDistances distance = new FiveKilometers(hours, minutes, seconds, Distances.KILOMETERS_10);
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.KILOMETERS_10.countPace(timeInSeconds);
                     System.out.println(countedPace);
                 } else if (choice == 3) {
+                    RunningDistances distance = DistancesFactory.createDistance(Distances.HALFMARATHON);
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
-                    RunningDistances distance = new FiveKilometers(hours, minutes, seconds, Distances.HALFMARATHON);
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.HALFMARATHON.countPace(timeInSeconds);
                     System.out.println(countedPace);
                 } else if (choice == 4) {
+                    RunningDistances distance = DistancesFactory.createDistance(Distances.MARATHON);
                     hours = in.nextInt();
                     minutes = in.nextInt();
                     seconds = in.nextInt();
-                    RunningDistances distance = new FiveKilometers(hours, minutes, seconds, Distances.MARATHON);
                     long timeInSeconds = distance.convertToSeconds(hours, minutes, seconds);
                     String countedPace = Distances.MARATHON.countPace(timeInSeconds);
                     System.out.println(countedPace);
