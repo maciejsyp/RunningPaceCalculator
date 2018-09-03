@@ -5,8 +5,8 @@ public class Messages {
     public Messages(){}
 
     void instructionMessage(){
-        System.out.println("Wprowadź swój szacowany wynik. Najpierw podaj liczbę godzin, później minut i na końcu" +
-                " sekund. Po każdej wartości potwierdź Enterem");
+        System.out.println("Wprowadź swój szacowany wynik. Najpierw podaj liczbę godzin (jeżeli czas będzie poniżej " +
+                "godziny, wpisz liczbę zero), później minut i na końcu sekund. Po każdej wartości potwierdź Enterem.");
     }
 
     void resultMessage(String result){
