@@ -1,6 +1,6 @@
 package RunningCalculator;
 
-public abstract class RunningDistances extends PaceCalculator {
+public abstract class RunningDistances extends TimeConverter {
 
     protected int hours;
     protected int minutes;

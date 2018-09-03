@@ -1,7 +1,7 @@
 package RunningCalculator;
 
 
-public abstract class PaceCalculator {
+public abstract class TimeConverter {
 
     private final int HOURS_TO_SECONDS = 3600;
     private final int MINUTES_TO_SECONDS = 60;
